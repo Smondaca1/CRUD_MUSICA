@@ -1,6 +1,15 @@
 <?php include("../database/db.php") ?>
 <?php include("../crud/header.php")?>
 <?php include("../controller/create_music.php")?>
+<?php 
+session_start();
+require("../database/db.php");
+
+if(empty($_SESSION["id"])) {
+    header("Location: ../pages/login.php");
+}
+
+?>
     
 <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
