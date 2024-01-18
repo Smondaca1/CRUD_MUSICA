@@ -54,8 +54,8 @@
                     <?= $datos->image_file ?>
                     </td>
                     <td class="px-6 py-4">
-                        <a href="../controller/edit_music.php?id=<?= $datos->id?>" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <a href="" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"><i class="fa-solid fa-trash"></i></a>
+                        <a href="../pages/edit_music.php?id=<?= $datos->id?>" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="../crud/index.php?id=<?= $datos->id?>" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"><i class="fa-solid fa-trash"></i></a>
                     </td>
                 </tr>
             <?php }
