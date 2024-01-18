@@ -7,6 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script> 
     <title>Recuperar contraseña</title>
 </head>
@@ -31,8 +32,9 @@
                     <div class="flex items-center justify-between">
                         <label for="newPassword" class="block text-sm font-medium leading-6 text-gray-900">Nueva contraseña</label>
                     </div>
-                    <div class="mt-2">
+                    <div class="mt-2 relative">
                         <input id="newPassword" name="newPassword" type="password" class="block w-full px-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        <i id="newPasswordEye" class="fa-solid fa-eye absolute top-2/4 right-4 -translate-y-1/2 text-indigo-600 cursor-pointer"></i>
                     </div>
                 </div>
 
@@ -41,8 +43,9 @@
                     <div class="flex items-center justify-between">
                         <label for="confirmPassword" class="block text-sm font-medium leading-6 text-gray-900">Confirmar contraseña</label>
                     </div>
-                    <div class="mt-2">
+                    <div class="mt-2 relative">
                         <input id="confirmPassword" name="confirmPassword" type="password" class="block w-full px-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        <i id="confirmPasswordEye" class="fa-solid fa-eye absolute top-2/4 right-4 -translate-y-1/2 text-indigo-600 cursor-pointer"></i>
                     </div>
                 </div>
 
@@ -53,15 +56,30 @@
         </div>
     </div>
     <script>
-        const timerContent = document.querySelector("#timerContent");
-        let number = 5;
-        const timer = setInterval(() => {
-            number--;
-            if(number == 0) {
-                clearInterval(timer);
-            }
-            timerContent.textContent = number
-        }, 1000);
+        
+        const newPasswordEye = document.querySelector("#newPasswordEye");
+        const confirmPasswordEye = document.querySelector("#confirmPasswordEye");
+        const inputNewPassword = document.querySelector("#newPassword");
+        const inputConfirmPassword = document.querySelector("#confirmPassword");
+
+
+        function showHidePassword(eye, password) {
+            
+            eye.addEventListener("click", ()=> {
+
+                if(password.type == "password") {
+                    password.type = "text";
+                    eye.classList.replace("fa-eye", "fa-eye-slash");
+                } else {
+                    password.type = "password";
+                    eye.classList.replace("fa-eye-slash", "fa-eye");
+                };
+            });
+        };
+
+        showHidePassword(newPasswordEye, inputNewPassword);
+        showHidePassword(confirmPasswordEye, inputConfirmPassword)
+ 
     </script>
 </body>
 </html>
