@@ -2,22 +2,22 @@
 <?php include("../crud/header.php")?>
 <?php include("../controller/create_music.php")?>
 <?php 
+
 session_start();
 require("../database/db.php");
 
 if(empty($_SESSION["id"])) {
     header("Location: ../pages/login.php");
 }
-
 ?>
-    
+
 <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
         <div class="sm:mx-auto sm:w-full sm:max-w-sm">
             <img class="mx-auto h-auto w-80" src="../assets/CRUD_logo.png" alt="Your Company">
             <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Agrega música</h2>
         </div>
         <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form class="space-y-6" action="#" method="POST">
+            <form class="space-y-6" action="" method="POST">
                 <div>
                     <label for="nombre" class="block text-sm font-medium leading-6 text-gray-900">Nombre</label>
                     <div class="mt-2">
@@ -34,20 +34,13 @@ if(empty($_SESSION["id"])) {
                     <label for="user" class="block text-sm font-medium leading-6 text-gray-900">Género</label>
                         <select id="countries" name="genero" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                             <option selected>Elige un genero</option>
-                            <option id="1">Alternativo</option>
-                            <option id="2">Electrónica</option>
-                            <option id="3">Hip-hop</option>
-                            <option id="4">Indie</option>
-                            <option id="5">K-pop</option>
-                            <option id="6">Pop</option>
-                            <option id="7">Punk</option>
-                            <option id="8">R&B</option>
-                            <option id="9">Rap</option>
-                            <option id="10">Reggaetón</option>
-                            <option id="11">Rock</option>
-                            <option id="12">Romántica</option>
-                            <option id="13">Trap</option>
-                
+                            <?php 
+                                $consulta = "SELECT * FROM genero";
+                                $ejecutar = mysqli_query($conn, $consulta) or die(mssqli_error($conn));
+                            ?>
+                            <?php foreach ($ejecutar as $opciones): ?> 
+                                <option value="<?php echo $opciones["id"] ?>"><?php echo $opciones["genre"] ?></option>
+                            <?php endforeach ?>
                         </select>
                 </div>
                 <div>
