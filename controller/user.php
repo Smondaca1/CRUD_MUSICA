@@ -37,7 +37,7 @@ if(!empty($_POST["submitBtn"])) {
                 return;
             }
 
-            header("Location: ../dashboard/index.php");
+            header("Location: ../crud/index.php");
         } else {
             echo "
                 <div role='alert'>

@@ -23,13 +23,13 @@
     <div class="hidden w-full md:block md:w-auto" id="navbar-default">
       <ul class="bg-indigo-600 font-medium flex flex-col p-4 md:p-0 mt-4  md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0">
         <li>
-          <a href="../dashboard/index.php" class=" bg-indigo-600 py-2 px-3 text-white  md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Inicio</a>
-        </li>
-        <li>
-          <a href="#" class=" bg-indigo-600 py-2 px-3 text-white md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Playlist</a>
+          <a href="../dashboard/create.php" class=" bg-indigo-600 py-2 px-3 text-white  md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Crear</a>
         </li>
         <li>
           <a href="../crud/index.php" class=" bg-indigo-600 py-2 px-3 text-white  md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Librería</a>
+        </li>
+        <li>
+          <a href="#" class=" bg-indigo-600 py-2 px-3 text-white md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Playlist</a>
         </li>
         <li>
           <a href="../controller/logout.php" class=" bg-indigo-600 py-2 px-3 text-white md:border-0 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Desconectarse</a>
